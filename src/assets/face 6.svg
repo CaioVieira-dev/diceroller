@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="144" height="144" viewBox="0 0 144 144">
+  <g id="face_6" data-name="face 6" transform="translate(18341 16506)">
+    <g id="body" transform="translate(-18341 -16506)" fill="#fff" stroke="#707070" stroke-width="1">
+      <rect width="144" height="144" rx="16" stroke="none"/>
+      <rect x="0.5" y="0.5" width="143" height="143" rx="15.5" fill="none"/>
+    </g>
+    <g id="dot" transform="translate(-18325 -16407)" stroke="#707070" stroke-width="1">
+      <circle cx="14.5" cy="14.5" r="14.5" stroke="none"/>
+      <circle cx="14.5" cy="14.5" r="14" fill="none"/>
+    </g>
+    <g id="dot-2" data-name="dot" transform="translate(-18242 -16490)" stroke="#707070" stroke-width="1">
+      <circle cx="14.5" cy="14.5" r="14.5" stroke="none"/>
+      <circle cx="14.5" cy="14.5" r="14" fill="none"/>
+    </g>
+    <g id="dot-3" data-name="dot" transform="translate(-18325 -16490)" stroke="#707070" stroke-width="1">
+      <circle cx="14.5" cy="14.5" r="14.5" stroke="none"/>
+      <circle cx="14.5" cy="14.5" r="14" fill="none"/>
+    </g>
+    <g id="dot-4" data-name="dot" transform="translate(-18242 -16407)" stroke="#707070" stroke-width="1">
+      <circle cx="14.5" cy="14.5" r="14.5" stroke="none"/>
+      <circle cx="14.5" cy="14.5" r="14" fill="none"/>
+    </g>
+    <g id="dot-5" data-name="dot" transform="translate(-18325 -16448)" stroke="#707070" stroke-width="1">
+      <circle cx="14.5" cy="14.5" r="14.5" stroke="none"/>
+      <circle cx="14.5" cy="14.5" r="14" fill="none"/>
+    </g>
+    <g id="dot-6" data-name="dot" transform="translate(-18242 -16448)" stroke="#707070" stroke-width="1">
+      <circle cx="14.5" cy="14.5" r="14.5" stroke="none"/>
+      <circle cx="14.5" cy="14.5" r="14" fill="none"/>
+    </g>
+  </g>
+</svg>

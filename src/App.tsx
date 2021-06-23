@@ -1,24 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import cog from './assets/cog.svg';
+
+import { Dice } from './components/Dice'
+
+import './styles/App.scss';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <header>
+        <h2>Dice Roller</h2>
+        <span><img src={cog} alt="Config" /></span>
       </header>
+      <main>
+        <button>Roll!</button>
+        <div className="dices">
+          <Dice />
+          <Dice />
+          <Dice />
+          <Dice />
+        </div>
+        <div className="total">
+          <span >16</span>
+        </div>
+      </main>
+
     </div>
   );
 }
