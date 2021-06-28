@@ -105,5 +105,25 @@
       align-items:center;
     }
   }
+
+  @media (max-width: 768px){
+    width: 100%;
+    padding: 0 2%;
+
+    main{
+      button{
+        width:140px;
+        height:140px;
+        margin-top:36px;
+      }
+      .dices {
+          height:155px;
+      margin-top:36px;
+          img{
+          transform: scale(0.8);
+          }
+      }
+    }
+  }
 }
 
