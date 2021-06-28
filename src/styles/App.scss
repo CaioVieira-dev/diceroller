@@ -2,7 +2,9 @@
   max-width: 760px;
   display: block;
   margin: 0 auto;
+  position: relative;
   header{
+    position: relative;
     display:flex;
     justify-content: space-between;
     align-items: center;
@@ -13,6 +15,8 @@
       font-size: 32px;
       letter-spacing:-3px;
     }
+
+    
   }
 
   main{
@@ -77,3 +81,4 @@
     }
   }
 }
+
