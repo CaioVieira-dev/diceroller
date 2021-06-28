@@ -56,14 +56,16 @@ export function Page() {
             <main>
                 <button onClick={toggleRoll}>Roll!</button>
                 <div className="dices">
-                    {[...Array(diceAmount)].map((dice, index) => {
-                        return <Dice
-                            key={`dice${index}`}
-                            name={`dice${index}`}
-                            isRolling={isRolling}
-                            stopRoll={stopRoll}
-                        />
-                    })}
+                    <div className="container">
+                        {[...Array(diceAmount)].map((dice, index) => {
+                            return <Dice
+                                key={`dice${index}`}
+                                name={`dice${index}`}
+                                isRolling={isRolling}
+                                stopRoll={stopRoll}
+                            />
+                        })}
+                    </div>
                 </div>
                 <div className="total">
                     <span >{sum}</span>
