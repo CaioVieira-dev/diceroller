@@ -1,5 +1,5 @@
 
-import cog from './assets/cog.svg';
+
 
 
 import { Dice } from './components/Dice'
@@ -15,18 +15,27 @@ import { useState } from 'react';
 
 export function Page() {
     const { sum } = useScore();
-    const [isModalOpen, setIsModalOpen] = useState<boolean>(true);
 
-    function toggleModal() {
-        setIsModalOpen(isModalOpen ? false : true);
+    const [diceAmount, setDiceAmount] = useState<number>(4);
+    const [diceSpin, setDiceSpin] = useState<number>(5);
+
+    function handleDiceAmount(increase: boolean) {
+        if (diceAmount !== 0) {
+            setDiceAmount(increase ? diceAmount + 1 : diceAmount - 1);
+        }
+    }
+    function handleDiceSpin(increase: boolean) {
+        if (diceSpin !== 0) {
+            setDiceSpin(increase ? diceSpin + 1 : diceSpin - 1);
+        }
     }
 
     return (
         <div id='App' className="App">
             <header>
                 <h2>Dice Roller</h2>
-                <span onClick={() => setIsModalOpen(true)}><img src={cog} alt="Config" /></span>
-                <ConfigModal toggleModal={toggleModal} isModalOpen={isModalOpen} />
+
+                <ConfigModal />
             </header>
             <main>
                 <button >Roll!</button>
