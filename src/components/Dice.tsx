@@ -8,7 +8,9 @@ import face6 from '../assets/face 6.svg';
 import { useScore } from '../hooks/useScore';
 import { useRollDice } from '../hooks/useRollDice'
 type DiceProps = {
-    name: string
+    name: string;
+    isRolling: boolean;
+    stopRoll: () => void;
 }
 
 export function Dice(props: DiceProps) {
@@ -19,46 +21,58 @@ export function Dice(props: DiceProps) {
 
     const { handleDiceChange } = useScore();
 
+
     useEffect(() => {
-        const num = Math.floor(Math.random() * (6 - 1 + 1)) + 1;
+        if (props.isRolling) {
+            const num = Math.floor(Math.random() * (6 - 1 + 1)) + 1;
 
-        const timer = setTimeout(() => {
-            if (rep === 0) {
-                return;
-            }
-            setRep(rep - 1)
-            switch (num) {
-                case 1:
-                    setFace(face1);
-                    setFaceVal(1);
-                    break;
-                case 2:
-                    setFace(face2);
-                    setFaceVal(2);
-                    break;
-                case 3:
-                    setFace(face3);
-                    setFaceVal(3);
-                    break;
-                case 4:
-                    setFace(face4);
-                    setFaceVal(4);
-                    break;
-                case 5:
-                    setFace(face5);
-                    setFaceVal(5);
-                    break;
-                case 6:
-                    setFace(face6);
-                    setFaceVal(6);
-                    break;
-            }
-        }, 500);
+            const timer = setTimeout(() => {
+                if (rep === 0) {
+                    props.stopRoll();
+                    return;
+                }
+                setRep(rep - 1)
 
-        return () => {
-            clearTimeout(timer);
+                switch (num) {
+                    case 1:
+                        setFace(face1);
+                        setFaceVal(1);
+                        break;
+                    case 2:
+                        setFace(face2);
+                        setFaceVal(2);
+                        break;
+                    case 3:
+                        setFace(face3);
+                        setFaceVal(3);
+                        break;
+                    case 4:
+                        setFace(face4);
+                        setFaceVal(4);
+                        break;
+                    case 5:
+                        setFace(face5);
+                        setFaceVal(5);
+                        break;
+                    case 6:
+                        setFace(face6);
+                        setFaceVal(6);
+                        break;
+                }
+            }, 500);
+
+            return () => {
+                clearTimeout(timer);
+            }
+        } else {
+            return;
         }
-    }, [rep])
+
+
+    }, [rep, props.isRolling]);
+    useEffect(() => {
+        setRep(configuredRep);
+    }, [props.isRolling])
 
     useEffect(() => {
         handleDiceChange(props.name, faceVal);
