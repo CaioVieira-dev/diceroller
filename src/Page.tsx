@@ -11,8 +11,6 @@ import { ConfigModal } from './components/ConfigModal'
 import { useState } from 'react';
 
 
-
-
 export function Page() {
     const { sum } = useScore();
 
@@ -35,15 +33,16 @@ export function Page() {
             <header>
                 <h2>Dice Roller</h2>
 
-                <ConfigModal />
+                <ConfigModal
+                    diceAmount={diceAmount}
+                    diceSpin={diceSpin}
+                    handleDiceSpin={handleDiceSpin}
+                    handleDiceAmount={handleDiceAmount} />
             </header>
             <main>
                 <button >Roll!</button>
                 <div className="dices">
-                    <Dice name="dice1" />
-                    <Dice name="dice2" />
-                    <Dice name="dice3" />
-                    <Dice name="dice4" />
+                    {[...Array(diceAmount)].map((dice, index) => { return <Dice name={`dice${index}`} /> })}
                 </div>
                 <div className="total">
                     <span >{sum}</span>

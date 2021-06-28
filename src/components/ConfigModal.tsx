@@ -10,7 +10,10 @@ import cog from '../assets/cog.svg';
 
 
 type ConfigModalProps = {
-
+    diceAmount: number;
+    diceSpin: number;
+    handleDiceSpin: (increase: boolean) => void;
+    handleDiceAmount: (increase: boolean) => void;
 }
 
 
@@ -60,17 +63,17 @@ export function ConfigModal(props: ConfigModalProps) {
                         <tr>
                             <td><p>Quantidade de dados:</p></td>
                             <td>
-                                <button><img src={arrowLeft} alt="botão diminuir" /></button>
-                                <span>4</span>
-                                <button><img src={arrowRight} alt="botão aumentar" /></button>
+                                <button onClick={() => props.handleDiceAmount(false)}><img src={arrowLeft} alt="botão diminuir" /></button>
+                                <span>{props.diceAmount}</span>
+                                <button onClick={() => props.handleDiceAmount(true)}><img src={arrowRight} alt="botão aumentar" /></button>
                             </td>
                         </tr>
                         <tr>
                             <td><p>Quantidade de giros:</p></td>
                             <td>
-                                <button><img src={arrowLeft} alt="botão diminuir" /></button>
-                                <span>4</span>
-                                <button><img src={arrowRight} alt="botão aumentar" /></button>
+                                <button onClick={() => props.handleDiceSpin(false)}><img src={arrowLeft} alt="botão diminuir" /></button>
+                                <span>{props.diceSpin}</span>
+                                <button onClick={() => props.handleDiceSpin(true)}><img src={arrowRight} alt="botão aumentar" /></button>
                             </td>
                         </tr>
                     </table>
