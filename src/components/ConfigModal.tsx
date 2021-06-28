@@ -38,6 +38,7 @@ export function ConfigModal(props: ConfigModalProps) {
                     left: '50%',
                     transform: 'translateX(-50%)',
                     maxWidth: '760px',
+                    width: '100%',
                     height: '100%',
                     border: '1px solid #ccc',
                     background: '#CFC800',
@@ -49,26 +50,28 @@ export function ConfigModal(props: ConfigModalProps) {
                 }
             }}
         >
-            <button onClick={props.toggleModal}><img src={closeCircle} alt="fechar modal" /> </button>
-            <h3>Configurações</h3>
-            <table>
-                <tr>
-                    <td>Quantidade de dados:</td>
-                    <td>
-                        <img src={arrowLeft} alt="botão diminuir" />
-                        <span>4</span>
-                        <img src={arrowRight} alt="botão aumentar" />
-                    </td>
-                </tr>
-                <tr>
-                    <td>Quantidade de giros:</td>
-                    <td>
-                        <img src={arrowLeft} alt="botão diminuir" />
-                        <span>4</span>
-                        <img src={arrowRight} alt="botão aumentar" />
-                    </td>
-                </tr>
-            </table>
+            <div className="modal">
+                <button className="close" onClick={props.toggleModal}><img src={closeCircle} alt="fechar modal" /> </button>
+                <h3>Configurações</h3>
+                <table>
+                    <tr>
+                        <td><p>Quantidade de dados:</p></td>
+                        <td>
+                            <button><img src={arrowLeft} alt="botão diminuir" /></button>
+                            <span>4</span>
+                            <button><img src={arrowRight} alt="botão aumentar" /></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><p>Quantidade de giros:</p></td>
+                        <td>
+                            <button><img src={arrowLeft} alt="botão diminuir" /></button>
+                            <span>4</span>
+                            <button><img src={arrowRight} alt="botão aumentar" /></button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
         </Modal>
     )
 }
